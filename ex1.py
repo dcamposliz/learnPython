@@ -1,0 +1,5 @@
+print "Hello World!"
+print "Hello again!"
+print "I like typing this"
+print "Yay! Printing."
+print "this is fun!"

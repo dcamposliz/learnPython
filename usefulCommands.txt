@@ -1,0 +1,29 @@
+USEFUL TERMINAL COMMANDS
+
+source: http://code.tutsplus.com/articles/10-terminal-commands-that-will-boost-your-productivity--net-14105
+
+touch
+
+	creates a file
+	ex:		$ touch index.html
+
+
+cat
+
+	print the contents of a file onto the terminal
+	useful for small documents
+	ex:		$ cat index.html
+
+less
+	
+	similar to command cat, except, useful for navigating
+	larger files
+	ex:		$ less index.html
+
+curl
+	
+	useful for 
+		1 - downloading framework libraries
+		2 - uncompress such libraries
+		3 - copy such pieces to particular project
+	ex:		$ curl -0 http://www.domain.com/{one,two,three}.txt

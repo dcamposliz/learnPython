@@ -9,7 +9,7 @@ cheese_and_crackers(20, 30)
 
 print "OR, we can use variables from our script:"
 amount_of_cheese = 10
-cheese_and_crackers = 50
+amount_of_crackers = 50
 
 cheese_and_crackers(amount_of_cheese, amount_of_crackers)
 

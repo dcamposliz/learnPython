@@ -11,6 +11,9 @@ print "If you do want that, hit RETURN."
 
 #running method raw_input, which asks user for input given the questions asked above
 raw_input("?")
+#the method above literally waits for the user to 'continue' by pressing 
+#ENTER so that the rest of the script is executed
+
 
 #printing some shit
 print "Opening the file..."
@@ -27,23 +30,32 @@ target = open(filename, 'w')
 
 #we print!
 print "Truncating the file. Goodbye!"
-#we run our 'function' target, and 
+#we run our 'function' target, which opens file with given two arguments
+#and truncates some stuff...
 target.truncate()
 
+#we print more stuff
 print "Now I'm going to ask you for three lines."
 
+#set some variables equal to some raw input that user provides
 line1 = raw_input("line 1: ")
 line2 = raw_input("line 2: ")
 line3 = raw_input("line 3: ")
 
+#print stuff
 print "I'm going to write these to the file."
 
+#run write method on top of target variable (given two parameters)
 target.write(line1)
 target.write("\n")
 target.write(line2)
 target.write("\n")
 target.write(line3)
 target.write("\n")
+#this literally has the user re-write the entirety of the text of the
+#file in custody
 
+#then we tell the user we're closing the file
 print "And finally, we close it."
 target.close()
+#then we close the file in custody

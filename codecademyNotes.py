@@ -140,6 +140,45 @@ print '%s/%s/%s %s:%s:%s' % (now.month, now.day, now.year, now.hour, now.minute,
 #----CONDITIONALS & CONTROL FLOW
 
 '''
+**and**
+
+True & True = True
+True & False = False
+False & True = False
+False & False = False
+
+**or**
+
+True or True = True
+True or False = True
+False or True = True
+False or False = False
+
+**not**
+
+Not True = False
+Not False = True
+
+COMPARATORS
+3 < 4
+5 >= 5
+10 == 10
+12 != 13
+
+BOOLEAN OPERATORS
+True or False 
+(3 < 4) and (5 >= 5)
+this() and not that()
+
+CONDITIONAL STATEMENTS
+if this_might_be_true():
+    print "This really is true."
+elif that_might_be_true():
+    print "That is true."
+else:
+    print "None of the above."
+
+
 	
 '''
 
@@ -173,6 +212,15 @@ bool_four = False
 
 # Set this to True if 99 != (98 + 1) or to False otherwise.
 bool_five = False
+
+#-----------------------------------------#
+
+
+#----CONDITIONALS
+
+'''
+	
+'''
 
 #-----------------------------------------#
 

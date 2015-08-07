@@ -34,3 +34,12 @@ start_point = start_point / 10
 
 print "We can also do that this way:"
 print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
+
+print "-----------"
+
+okay = 20000
+simon, simon2, simon3 = secret_formula(okay)
+
+print "first random variable prints: %d" % simon
+print "second random variable prints: %d" % simon2
+print "third random variable prints: %d" % simon3

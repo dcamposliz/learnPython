@@ -1,3 +1,0 @@
-this is cool. i can create files on the fly with this thing!
-the parameter i have to pass it as i run the script is the name and format if the file
-and then i pass it the content that is saved within. think of the name and format as the meta-data.. and the other stuff is the actual "meat" of the document  :)

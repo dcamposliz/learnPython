@@ -1,14 +1,14 @@
-#notes ( datacamp [python] )
+#notes ( datacamp [ python ] )
 
-print()	-	printing
-type()	-	variable type
-**		-	exponents
+Some basics:
 
-+ 		-	sum & concatenation
-
-str()
-float()
-int()
+	print()	-	printing
+	type()	-	variable type
+	**		-	exponents
+	+ 		-	sum & concatenation
+	str()
+	float()
+	int()
 
 --
 
@@ -62,3 +62,123 @@ this means that:
 	[   start   :    end     ]
 	  inclusive   exclusive
 	
+if we enter:
+
+	list = [1,2,3,4,5]
+
+	list[:2]
+
+	> 1, 2, 3
+
+if we enter:
+
+	list = [1,2,3,4,5]
+
+	list[1] + list[3]
+
+	> 6
+
+we can do cool stuff:
+
+	areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+	downstairs = areas[:6]
+	upstairs = areas[-4:]
+
+	print(downstairs)
+	print(upstairs)
+
+	> ['hallway', 11.25, 'kitchen', 18.0, 'living room', 20.0]
+	> ['bedroom', 10.75, 'bathroom', 9.5]
+
+
+
+	x = [["a","b","c"],["d","e","f"],["g","h","i"]]
+
+	x[2][0]
+
+	x[2][:2]
+
+--
+
+LIST MANIPULATION
+
+we can update list elements. for example, if we have:
+
+	list = [1, 2, 3, 4, 5]
+
+	list[0]
+
+	> 1
+
+say we want to modify element at position 0, then we do:
+
+	list[0] = "waa"
+
+	list
+
+	> ["waa", 2, 3, 4, 5]
+
+say we want to add elements to a list, we do:
+
+	list = [1, 2, 3, 4, 5]
+
+	list + [6, 7, 8, 9, 10]
+
+	> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+of course, we can declare new variables and assign these values
+
+additionally, we can delete items from the list. for this, we do:
+
+	list = [1, 2, 3, 4, 5]
+
+	del(list[0])
+
+	list
+
+	> [2, 3, 4, 5]
+
+--
+
+behind the scenes
+
+when we declare a list variable and assign values to it, we are not actually 'storing values' to our list variable. instead, our list variable points to the values we assign to it.
+
+let's see an example to sense how this works:
+
+	list = [1, 2, 3, 4, 5]
+
+	x = list
+
+	x[0] = "blah"
+
+	list
+
+	> ["blah", 2, 3, 4, 5]
+
+insteresting that when we change the value of element with index 0 for list variable x, index 0 for list variable list also changes.
+
+if we want to copy a list whose values are independent from the first list, we can do the following:
+
+	list = [1,2,3,4,5]
+
+	x = list(list)
+
+as you can see, we used the list() function. we can also use slicing:
+
+	list = [1,2,3,4,5]
+
+	x = list[:]
+
+this way, if we modify the element values of x, we will not modify the values of list.
+
+
+--
+
+FUNCTIONS
+
+a function is a piece of reusable code, and it solves a particular task. we call functions instead of writing the code ourselves because it saves time :D
+
+type()
+

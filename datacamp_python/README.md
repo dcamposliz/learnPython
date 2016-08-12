@@ -180,5 +180,161 @@ FUNCTIONS
 
 a function is a piece of reusable code, and it solves a particular task. we call functions instead of writing the code ourselves because it saves time :D
 
-type()
+Here are a couple of python functions:
 
+	type()
+
+	max()
+
+	round()
+
+	help()
+
+	print()
+
+	str()
+
+	int()
+
+	bool()
+
+	float()
+
+	len()
+
+For example:
+
+	list = [1, 2, 3, 4, 5]
+
+	max(list)
+
+	> 5
+
+When calling functions, some of the parameters are required, some are not.
+
+--
+
+Methods
+
+Methods are functions that belong to objects.
+
+For example, we have:
+
+ - str:
+
+	capitalize()
+
+	replace()
+
+ - float:
+
+	bit_length()
+
+	conjugate()
+
+ - list:
+
+	index()
+
+	count()
+
+We can do:
+
+	list = ["green", "blue", "purple", "black"]
+
+	list.index("blue")
+
+	> 1
+
+We can do:
+
+	sister = 'jessica'
+
+	sister.capitalize()
+
+	> 'Jessica'
+
+We can do:
+
+	sister = 'jessica'
+
+	sister.replace('ica', 'y')
+
+	> 'jessy'
+
+Methods will behave differently depending on the object type.
+
+We can update our data structures on the fly.
+
+We can do:
+
+	colors = ["blue", "green", "purple"]
+
+	colors.append("black")
+
+	> ["blue", "green", "purple", "black"]
+
+
+In this section we saw:
+
+ - Functions
+
+ - Methods: call functions on objects
+
+  - We can call these using the dot notation:
+
+  	object.method()
+
+--
+
+String Methods:
+
+	upper()
+
+We can do:
+
+	color = 'green'
+
+	color_up = color.upper()
+
+	print(color_up)
+
+	> GREEN
+
+--
+
+List Methods:
+
+	append() -- adds element to list
+
+	remove() -- removes the first element of a list that matches the input
+
+	reverse() -- reverses the order of the different elements in the list it is called on
+
+For example:
+	
+	numbers = [1, 2, 3, 4, 5]
+
+	numbers.reverse()
+
+	print(numbers)
+
+	> [5, 4, 3, 2, 1]
+	
+--
+
+PACKAGES
+
+Functions and methods are powerful. Packages are directories of Python scripts, where each script is a module, and where modules specify functions, methods, and types.
+
+There are thousands of packages, among which we find:
+
+ - Numpy: to efficiently work with arrays
+
+ - Matplotlib: for data visualization
+
+ - Scikit-learn: for machine learning
+
+Packages must first be installed globally, and then imported into scripts.
+
+	 n

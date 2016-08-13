@@ -335,6 +335,8 @@ There are thousands of packages, among which we find:
 
  - Scikit-learn: for machine learning
 
-Packages must first be installed globally, and then imported into scripts.
+Packages must first be installed globally, and then imported into scripts. For this we visit 
 
-	 n
+
+
+

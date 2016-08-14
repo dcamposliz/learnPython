@@ -335,8 +335,65 @@ There are thousands of packages, among which we find:
 
  - Scikit-learn: for machine learning
 
-Packages must first be installed globally, and then imported into scripts. For this we visit 
+Packages must first be installed globally, and then imported into scripts. We use pip as a package manager for Python.
 
+	pip --stuff (google this stuff, come on)
 
+	pip3 install numpy
 
+Then we import installed packages using the import function. We can use an alias to call our installed package when we call its methods:
+
+	import numpy
+
+	numpy.array([1, 2, 3])
+
+	> array([1, 2, 3])
+
+Similarly (this time we use the alias thing):
+
+	import numpy as np
+
+	np.array([1, 2, 3])
+
+	> array([1, 2, 3])
+
+We can also import only certain functions from a package. For example:
+
+	from math import pi
+
+--
+
+With stand-alone Python, it is difficult to manipulate lists at scale. For this, we use the numpy package, which stands for numerical python.
+
+Numpy:
+
+ - Numeric Python
+
+ - Alternative to Python list: Numpy Array
+
+ - Calculations over entire arrays
+
+ - Easy and fast
+
+ - Installation
+
+  - In the terminal: pip3 install numpy
+
+Example:
+	
+	import numpy as np
+
+	list = [1,2,3,4,5]
+
+	list_array = np.array(list)
+
+	list_array ** 2
+
+	> array([1, 4, 9, 16, 25])
+
+Numpy array assumes that one one data type is being used. If this is not true, then numpy array will turn all elements into one data type -- this is known as type coercion.
+
+Numpy array indexing works just as python lists.
+
+--
 

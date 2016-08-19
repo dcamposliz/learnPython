@@ -397,3 +397,160 @@ Numpy array indexing works just as python lists.
 
 --
 
+we are missing some notes here from the beginner python course.
+
+--
+
+--
+
+INTERMEDIATE PYTHON FOR DATA SCIENCE
+
+--
+
+We start with data visualizations with matplotlib.
+
+Here we plot two vectors, year and pop.
+
+	import matplotlib.pyplot as plt
+
+	year = [1950, 1970, 1990, 2010]
+	pop = [2.519, 3.692, 5.263, 6.972]
+
+	plt.plot(year, pop)
+	plt.show()
+
+	plt.scatter(year, pop)
+	plt.show()
+
+It's worth noting the order of parameters for plt.plot() and plt.scatter(). The first parameter is the X-AXIS and the second parameter is the Y-AXIS.
+
+We can do logarithmic transformations to our plots. For example:
+
+	import matplotlib.pyplot as plt
+
+	year = [1950, 1970, 1990, 2010]
+	pop = [2.519, 3.692, 5.263, 6.972]
+
+	plt.scatter(year, pop)
+
+	plt.xscale('log')
+
+	plt.show()
+
+--
+
+Histograms
+
+Type of visualization helpful to explore data and distributions. Python gives us histogram super-powers:
+
+	import matplotlib.pyplot as plt
+
+	help(plt.hist)
+
+Let's do an example:
+
+	# Build histogram with 5 bins
+	plt.hist(life_exp, bins = 5)
+
+	# Show and clean up plot
+	plt.show()
+	plt.clf()
+
+	# Build histogram with 20 bins
+	plt.hist(life_exp, bins = 20)
+
+	# Show and clean up again
+	plt.show()
+	plt.clf()
+
+--
+
+Customizations
+
+ - Data visualization
+
+  - Different plot types
+
+  - Many customizations
+
+  - Choise depends on data and story you want to tell
+
+Example:
+
+	import matplotlib.pyplot as plt
+
+	year = [1950, 1951, 1952, ..., 2100]
+	
+	pop = [2.538, 2.57, 2.62, ..., 10.85]
+
+	plt.plot(year, pop)
+
+	plt.xlabel('Year')
+	plt.ylabel('Population')
+	plt.title('World Population Projections')
+	plt.yticks([0,2,4,6,8,10],
+			   ['0B','2B','4B','6B','8B','10B'])
+
+	plt.show()
+
+--
+
+Here we start seeing bubbles:
+
+	# Import numpy as np
+	import numpy as np
+
+	# Store pop as a numpy array: np_pop
+	np_pop = np.array(pop)
+
+	# Double np_pop
+	np_pop = np_pop * 2
+
+	# Update: set s argument to np_pop
+	plt.scatter(gdp_cap, life_exp, s = np_pop)
+
+	# Previous customizations
+	plt.xscale('log') 
+	plt.xlabel('GDP per Capita [in USD]')
+	plt.ylabel('Life Expectancy [in years]')
+	plt.title('World Development in 2007')
+	plt.xticks([1000, 10000, 100000],['1k', '10k', '100k'])
+
+	# Display the plot
+	plt.show()
+
+--
+
+Here we see colorful bubbles -- all we are doing is further customizing the plt.scatter() method.
+
+	# Specify c and alpha inside plt.scatter()
+	plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c = col, alpha = 0.8)
+
+	# Previous customizations
+	plt.xscale('log') 
+	plt.xlabel('GDP per Capita [in USD]')
+	plt.ylabel('Life Expectancy [in years]')
+	plt.title('World Development in 2007')
+	plt.xticks([1000,10000,100000], ['1k','10k','100k'])
+
+	# Show the plot
+	plt.show()
+
+--
+
+There are other customizations we can make to our bubble plots. For example:
+
+	plt.text(1550, 71, 'India')
+
+	plt.grid(True)
+
+
+
+
+
+
+
+
+
+
+

@@ -598,8 +598,27 @@ If we wanted to print such value, all we would do is to wrap it in the `print()`
 	print(dictionary_0["key_0"]["key_1"])
 
 
+## PANDAS
 
+**Pandas** is an open source library written in Python. Pandas is interesting because it provides high-performance and easy-to-use data structures and data analysis tools.
 
+The `DataFrame` is one of the most important data structures in Pandas. It is a way to store tabular data -- basically rows and columns. We can use Python dictionaries to build Pandas DataFrames.
+
+### Importing Pandas
+
+	import pandas as pd
+
+### Creating a DataFrame out of a Dictionary
+
+	california = {
+		key_1 : { ... },
+		key_2 : { ... },
+		key_3 : { ... }
+	}
+	
+	california_DataFrame = pd.DataFrame(california)
+
+Notice that we imported `pandas` as `pd`, and that we are calling `DataFrame` by `pd.DataFrame()`.
 
 
 

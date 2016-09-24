@@ -545,6 +545,63 @@ There are other customizations we can make to our bubble plots. For example:
 	plt.grid(True)
 
 
+--
+
+## DICTIONARIES
+
+Declare a dictionary:
+
+	dictionary = {
+		"key_1":"value_1"
+		"key_2":"value_2"
+		
+		...
+
+		"key_n":"value_n"
+	}
+
+Check the value of a key within a dictionary:
+
+	dictionary["key"]
+
+	> value
+
+Add a key-value pair to an existing dictionary:
+
+	dictionary["key"] = value
+
+Check whether a key is part of a dictionary:
+
+	"key" in dictionary
+
+	> True
+
+Delete a key-value pair from a dictionary:
+
+	del(dictionary["key"])
+
+Dictionaries can contain other dictionaries:
+
+	dictionary_0 = {
+		"key_0" = {
+			"key_1" = "value_1",
+			"key_2" = "value_2"
+		}
+	}
+
+For the above dictionary, we can access `value_1` by typing:
+
+	dictionary_0["key_0"]["key_1"]
+
+If we wanted to print such value, all we would do is to wrap it in the `print()` function:
+
+	print(dictionary_0["key_0"]["key_1"])
+
+
+
+
+
+
 
 
 

@@ -1,16 +1,21 @@
-#notes ( datacamp [ python ] )
+# PYTHON FOR DATA SCIENCE
+### Notes from DataCamp
 
-Some basics:
+This README contains reference notes from DataCamp's courses on Python for Data Science, Intro as well as Intermediate.
 
-	print()	-	printing
-	type()	-	variable type
-	**		-	exponents
-	+ 		-	sum & concatenation
+# INTRODUCTION
+
+## Some basics:
+
+	print()		# for printing
+	type()		# for variable type
+	**		# for exponents
+	+ 		# for sum & concatenation
 	str()
 	float()
 	int()
 
---
+## Lists
 
 A list is a collection of python data types.
 
@@ -45,9 +50,9 @@ if we enter:
 
 	> 3
 
-this is called 'indexing'.
+this is called **indexing**.
 
-we can also do 'slicing'.
+we can also do **slicing**.
 
 if we enter:
 
@@ -101,9 +106,9 @@ we can do cool stuff:
 
 --
 
-LIST MANIPULATION
+## Maniputaling Lists
 
-we can update list elements. for example, if we have:
+We can **update** list elements. for example, if we have:
 
 	list = [1, 2, 3, 4, 5]
 
@@ -111,7 +116,7 @@ we can update list elements. for example, if we have:
 
 	> 1
 
-say we want to modify element at position 0, then we do:
+say we want to **modify element** at position 0, then we do:
 
 	list[0] = "waa"
 
@@ -119,7 +124,7 @@ say we want to modify element at position 0, then we do:
 
 	> ["waa", 2, 3, 4, 5]
 
-say we want to add elements to a list, we do:
+Say we want to **add elements** to a list, we do:
 
 	list = [1, 2, 3, 4, 5]
 
@@ -127,9 +132,9 @@ say we want to add elements to a list, we do:
 
 	> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-of course, we can declare new variables and assign these values
+Of course, we can declare new variables and assign these values.
 
-additionally, we can delete items from the list. for this, we do:
+Additionally, we can **delete** items from the list. for this, we do:
 
 	list = [1, 2, 3, 4, 5]
 
@@ -139,13 +144,11 @@ additionally, we can delete items from the list. for this, we do:
 
 	> [2, 3, 4, 5]
 
---
+#### *Behind the Scenes*
 
-behind the scenes
+When we declare a list variable and assign values to it, we are not actually 'storing values' to our list variable. instead, our list variable points to the values we assign to it.
 
-when we declare a list variable and assign values to it, we are not actually 'storing values' to our list variable. instead, our list variable points to the values we assign to it.
-
-let's see an example to sense how this works:
+Let's see an example to sense how this works:
 
 	list = [1, 2, 3, 4, 5]
 
@@ -157,26 +160,23 @@ let's see an example to sense how this works:
 
 	> ["blah", 2, 3, 4, 5]
 
-insteresting that when we change the value of element with index 0 for list variable x, index 0 for list variable list also changes.
+It is interesting that when we change the value of element with index 0 for list variable x, index 0 for list variable list also changes.
 
-if we want to copy a list whose values are independent from the first list, we can do the following:
+If we want to copy a list whose values are independent from the first list, we can do the following:
 
 	list = [1,2,3,4,5]
 
 	x = list(list)
 
-as you can see, we used the list() function. we can also use slicing:
+As notable, we used the `list()` function. we can also use slicing:
 
 	list = [1,2,3,4,5]
 
 	x = list[:]
 
-this way, if we modify the element values of x, we will not modify the values of list.
+This way, if we modify the element values of x, we will not modify the values of list.
 
-
---
-
-FUNCTIONS
+## Functions
 
 a function is a piece of reusable code, and it solves a particular task. we call functions instead of writing the code ourselves because it saves time :D
 
@@ -212,9 +212,8 @@ For example:
 
 When calling functions, some of the parameters are required, some are not.
 
---
 
-Methods
+## Methods
 
 Methods are functions that belong to objects.
 
@@ -285,9 +284,7 @@ In this section we saw:
 
   	object.method()
 
---
-
-String Methods:
+### String Methods:
 
 	upper()
 
@@ -301,9 +298,7 @@ We can do:
 
 	> GREEN
 
---
-
-List Methods:
+### List Methods:
 
 	append() -- adds element to list
 
@@ -320,20 +315,18 @@ For example:
 	print(numbers)
 
 	> [5, 4, 3, 2, 1]
-	
---
 
-PACKAGES
+## Packages
 
 Functions and methods are powerful. Packages are directories of Python scripts, where each script is a module, and where modules specify functions, methods, and types.
 
 There are thousands of packages, among which we find:
 
- - Numpy: to efficiently work with arrays
+ - **Numpy**: to efficiently work with arrays
 
- - Matplotlib: for data visualization
+ - **Matplotlib**: for data visualization
 
- - Scikit-learn: for machine learning
+ - **Scikit-learn**: for machine learning
 
 Packages must first be installed globally, and then imported into scripts. We use pip as a package manager for Python.
 
@@ -397,15 +390,11 @@ Numpy array indexing works just as python lists.
 
 --
 
-we are missing some notes here from the beginner python course.
+**we are missing some notes here from the beginner python course.**
 
 --
 
---
-
-INTERMEDIATE PYTHON FOR DATA SCIENCE
-
---
+# INTERMEDIATE
 
 We start with data visualizations with matplotlib.
 
@@ -437,9 +426,7 @@ We can do logarithmic transformations to our plots. For example:
 
 	plt.show()
 
---
-
-Histograms
+## Histograms
 
 Type of visualization helpful to explore data and distributions. Python gives us histogram super-powers:
 
@@ -463,9 +450,7 @@ Let's do an example:
 	plt.show()
 	plt.clf()
 
---
-
-Customizations
+## Customizations
 
  - Data visualization
 
@@ -619,6 +604,36 @@ The `DataFrame` is one of the most important data structures in Pandas. It is a 
 	california_DataFrame = pd.DataFrame(california)
 
 Notice that we imported `pandas` as `pd`, and that we are calling `DataFrame` by `pd.DataFrame()`.
+
+At this point we can see our newly formed DataFrame by doing a simple `print()`:
+
+	print(california_DataFrame)
+
+### Indexing a DataFrame
+
+By convention, rows will be indexed, starting from `0`. We can specify a 'custom' index by using an array -- such array must contain the same amount of elements as the DataFrame.
+
+	row_labels = ['row_1','row_2', ..., 'row_n']
+
+	california_DataFrame.index = row_labels
+
+### CSV to DataFrame
+
+We can import data from a CSV file into Python using the `read_csv()` method. Of course we must call this method from the pandas object, which we denoted earlier as `pd`. Notice that we surround `FILE.csv` with quotes.
+
+	DATA = pd.read_csv("FILE.csv")
+
+`read.csv_()` has multiple parameters, amongst which `index_col` is used to specify which column in the CSV file should be used as row label -- we use integers, starting from `0`, to make such specification.
+
+	DATA = pd.read_csv("FILE.csv", index_col = 0)
+
+### Accessing Data
+
+Feeling lazy...
+
+
+
+
 
 
 

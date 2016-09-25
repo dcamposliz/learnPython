@@ -621,15 +621,46 @@ By convention, rows will be indexed, starting from `0`. We can specify a 'custom
 
 We can import data from a CSV file into Python using the `read_csv()` method. Of course we must call this method from the pandas object, which we denoted earlier as `pd`. Notice that we surround `FILE.csv` with quotes.
 
-	DATA = pd.read_csv("FILE.csv")
+	DATAFRAME_NAME = pd.read_csv("FILE_NAME.csv")
 
 `read.csv_()` has multiple parameters, amongst which `index_col` is used to specify which column in the CSV file should be used as row label -- we use integers, starting from `0`, to make such specification.
 
-	DATA = pd.read_csv("FILE.csv", index_col = 0)
+	DATAFRAME_NAME = pd.read_csv("FILE_NAME.csv", index_col = 0)
 
-### Accessing Data
+### Accessing Data with Pandas
 
-Feeling lazy...
+#### Columns
+
+With Pandas we have another data type, known as **Pandas Series**. Let's see an example:
+
+	import pandas as pd
+	DATAFRAME_NAME = pd.read_csv("FILE_NAME.csv", index_col = 0)
+
+	DATAFRAME_NAME["COLUM_NAME"] 	# returns pandas series object
+
+We could print this object by wrapping it in the `print()` method, for example.
+
+	print(DATAFRAME_NAME["COLUM_NAME"])
+
+We can output the 'good-old' Pandas **DataFrame** with *double-bracket* notation:
+
+	DATAFRAME_NAME[["COLUMN_NAME"]]		# returns pandas DataFrame
+
+Let's print two DataFrame columns to see how it's done:
+
+	print(DATAFRAME_NAME[["COLUMN_NAME_1","COLUMN_NAME_2"]])
+
+#### Rows
+
+We can access rows, also using square brackets. For this we use `DATAFRAME_NAME[i:j]` such that `i` and `j` are the beginning and ending rows for our subset, respectively. Again:
+
+	DATAFRAME_NAME[i:j]
+
+### **loc** and **iloc**
+
+...
+
+
 
 
 

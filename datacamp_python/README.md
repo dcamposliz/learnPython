@@ -688,12 +688,14 @@ We can also select *only* columns with `loc` and `iloc`:
 
 **As Series**:
 
-	DATAFRAME_NAME.loc[:,'COLUMN_NAME'] # this returns data for all rows spanning COLUMN_NAME, as a pandas series
-	DATAFRAME_NAME.iloc[:, i] # this returns data for all rows spanning column *i*, as a pandas series
+	DATAFRAME_NAME.loc[:,'COLUMN_NAME']
+	DATAFRAME_NAME.iloc[:, i]
 
 We can do the same for accessing **dataframes**. All we need to do is add the necessary *double-brackets*.
 
-##
+## Comparison Operators
+
+...
 
 
 

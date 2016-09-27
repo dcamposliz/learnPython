@@ -656,7 +656,37 @@ We can access rows, also using square brackets. For this we use `DATAFRAME_NAME[
 
 	DATAFRAME_NAME[i:j]
 
-### **loc** and **iloc**
+### More Data Selection `loc` and `iloc`
+
+`loc` is labeled based, whereas `iloc` is index based. As we saw before, we can access data in dataframes as either **series** or **dataframes**:
+
+	import pandas as pd
+	DATAFRAME_NAME = pd.read_csv('FILE_NAME.csv', index_col = 0)
+
+	DATAFRAME_NAME.loc["ROW_NAME"] # returns data as pandas series
+	DATAFRAME_NAME.iloc[i] # returns data as pandas series
+
+	DATAFRAME_NAME.loc[["ROW_NAME"]] # returns data as dataframe
+	DATAFRAME_NAME.iloc[[i]] # returns data as dataframe
+
+`loc` and `iloc` also let us access both rows and columns from a dataframe, at the same time.
+
+	DATAFRAME_NAME.loc["ROW_NAME", "COLUMN_NAME"] # returns data spanning ROW_NAME and COLUMN_NAME, as pandas series
+	DATAFRAME_NAME.iloc[i,j] # returns data spanning row *i* and column *j*, as pandas series
+
+	DATAFRAME_NAME.loc([['ROW_NAME_1','ROW_NAME_2'],['COLUMN_NAME_1','COLUMN_NAME_2']]) # returns data spanning ROW_NAME_1, ROW_NAME_2, COLUMN_NAME_1, COLUMN_NAME_2, as dataframe
+
+We can also select *only* columns with `loc` and `iloc`:
+
+	DATAFRAME_NAME.loc[:,'COLUMN_NAME'] # this returns data for all rows spanning COLUMN_NAME, as a pandas series
+	DATAFRAME_NAME.iloc[:, i] # this returns data for all rows spanning column *i*, as a pandas series
+
+We can do the same for accessing dataframes. All we need to do is add the necessary *double-brackets*.
+
+...
+	
+
+
 
 ...
 

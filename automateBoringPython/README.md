@@ -52,27 +52,27 @@ Requirements:
 
 --
 
-Operation ---|--- Operation ---|--- Example ---|--- Evaluates to
+Operation , Operation , Example , Evaluates to
 
 --
 
-`**`   ---|---   `Exponent` ---|--- `2 ** 3`  |  `8`
+`**`,`Exponent`,`2 ** 3`,`8`
 
 --
 
-`%`     |   `Modulus/reminder`  | `22 % 8`  |   `6`
+`%`,`Modulus/reminder`,`22 % 8`,`6`
 
 --
 
-`//`    |   `Integer division ` | `22 // 8` |   `2`
+`//`,`Integer division`,`22 // 8`,`2`
 
 --
 
-`/`     |   `Division`          | `22 / 8`  |   `2.75`
+`/`,`Division`,`22/8`,`2.75`
 
 --
 
-`*` ----|   `Multiplication`    | `3 * 5`   |  `15`
+`*`,`Multiplication`,`3*5`,`15`
 
 --
 

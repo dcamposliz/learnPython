@@ -17,7 +17,7 @@ Requirements:
  - Send reminder emails and text notifications
  - Fill out online forums
 
-*Table of Contents**
+**Table of Contents**
 
 1. Introduction
 2. Python Basics
@@ -50,9 +50,9 @@ Requirements:
 
 **Math Operators**
 
- ----------------------------------------------------------------------
- Operator   |	Operation      	|	Example	   |	Evaluates to..
- ----------------------------------------------------------------------
+----------------------------------------------------------------------
+Operator	Operation      		Example	   	Evaluates to..
+----------------------------------------------------------------------
  **		Exponent		2 ** 3		8
  %		Modulus/reminder	22 % 8		6
  //		Integer division	22 // 8		2
@@ -60,7 +60,7 @@ Requirements:
  *		Multiplication		3 * 5		15
  -		Subtraction		5 - 2		3
  +		Addition		2 + 2		4
- ----------------------------------------------------------------------
+----------------------------------------------------------------------
 
 The order of operations (also called precedence) of Python math operators is similar to that of mathematics. The ** operator is evaluated first, the *, /, //, and % operators are evaluated next, from left to right, and the + and - are evaluated last (also from left to right). You can use parenthesis to override the usual precedence if you need to.
 

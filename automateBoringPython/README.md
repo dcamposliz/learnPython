@@ -76,7 +76,7 @@ Operation , Operation , Example , Evaluates to
 
 --
 
-The order of operations (also called precedence) of Python math operators is similar to that of mathematics. The ** operator is evaluated first, the *, /, //, and % operators are evaluated next, from left to right, and the + and - are evaluated last (also from left to right). You can use parenthesis to override the usual precedence if you need to.
+The order of operations (also called precedence) of Python math operators is similar to that of mathematics. The `**` operator is evaluated first, the `*`, `/`, `//`, and % operators are evaluated next, from left to right, and the + and - are evaluated last (also from left to right). You can use parenthesis to override the usual precedence if you need to.
 
 	>>> 2 + 3 * 6
 
@@ -117,6 +117,22 @@ There is a bunch of other basic Python stuff that we are going to skip because i
 `int()`
 
 `float()`
+
+--
+
+--
+
+## Chapter 11 - Web Scraping
+
+*Web scraping* is the term for using a program to download and process content from the Web. For example, Google runs many web scraping programs to index web pages for its search engine. Here are some **python modules** we will be visiting:
+
+ - **webbrowser**: comes with Python and opens a browser to a specific page.
+
+ - **Requests**: downloads files and web pages from the Internet.
+
+ - **Beautiful Soup**: parses HTML, the format that web pages are written in.
+
+ - **Selenium**: launches and controls a web browser. Selenium is able to fill in forms and simulate mouse clicks in the browser.
 
 
 

@@ -4,7 +4,7 @@ In this repository I document my journey through learning `Python`. **To see the
 
 ## WHY PYTHON
 
-`Python` is easy to learn, easy to read and write, and powerful. You can learn `Python` frameworks like `Django`, and build full-blown apps. Or you can learn data-science like `pandas`, `matplotlib`, `scikit-learn`.
+`Python` is easy to learn, easy to read and write, and powerful. You can learn `Python` frameworks like `Django`, and build full-blown apps. Or you can learn **run data science jobs** like `pandas`, `matplotlib`, `scikit-learn` or even `spark`.
 
 ## RESOURCES
 

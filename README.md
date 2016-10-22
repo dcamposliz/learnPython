@@ -1,8 +1,12 @@
 # learnPython
 
-In this repository I document my journey through learning `Python`.
+In this repository I document my journey through learning `Python`. **To see the code, explore the directories above.**
+
+## WHY PYTHON
 
 `Python` is easy to learn, easy to read and write, and powerful. You can learn `Python` frameworks like `Django`, and build full-blown apps. Or you can learn data-science like `pandas`, `matplotlib`, `scikit-learn`.
+
+## RESOURCES
 
 Here is a brief list of resources I used for this:
 

@@ -1,13 +1,9 @@
-#------------------------------------------------------------------
 # Exercise 25: Even More Practice
+
 # This code is to be imported instead of just executed
-#------------------------------------------------------------------
-# --- TO IMPORT THIS "MODULE", OPEN UP A TERMINAL AND ENTER:
-#
-#	python2
-#	import ex25
-#
-# --- THEN RUN ALL THE COMMANDS YOU WANT
+
+# --- TODO: write instructions on how to import this thing!
+
 #------------------------------------------------------------------
 
 # we use the `def` keyword to define our own functions
@@ -58,8 +54,8 @@ def sort_sentence(sentence):
 def print_first_and_last(sentence):
 	"""Prints the first and last words and last words of the sentence"""
 	words = break_words(sentence)
-	return print_first_word(words)
-	return print_last_word(words)
+	print_first_word(words)
+	print_last_word(words)
 
 #------------------------------------------------------------------
 

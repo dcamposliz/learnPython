@@ -7,3 +7,10 @@ print "I could have code like this." # and the comment after is ignored
 # print "this won't run."
 
 print "This will run."
+
+# Here we just learn how to add comments.
+
+
+# --------------------------------------------------
+
+# this comment thing is called a `pound`

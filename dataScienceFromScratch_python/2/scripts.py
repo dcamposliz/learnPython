@@ -112,8 +112,8 @@ import matplotlib.pyplot as plt
     # if you only need specific values from a module,
     # you can import them specifically
 
-from collections import defaultdict, Couter
-lookup = defaultdic(int)
+from collections import defaultdict, Counter
+lookup = defaultdict(int)
 my_counter = Counter()
 
 # -----------------------------------------------------
@@ -121,9 +121,9 @@ my_counter = Counter()
     # we can also be dumb, and have conflicting
     # names in our namespace
 
-match = 10
-from re import *    # uh oh, re has a match functions
-print match         # "<function re.match>"
+# match = 10
+# from re import *    # uh oh, re has a match functions
+# print match         # "<function re.match>"
 
 # -----------------------------------------------------
 
@@ -135,8 +135,12 @@ print match         # "<function re.match>"
 # ARITHMETIC
 # -----------------------------------------------------
 
-from __future__ import division
+    # by default, python will carry out integer divisions
 
+5 / 2   # should output 2
+# from __future__ import division
+5 / 2   # should output 2.5 now that we imported `division`
+2 + 2
 
 # -----------------------------------------------------
 
@@ -148,7 +152,11 @@ from __future__ import division
 # FUNCTIONS
 # -----------------------------------------------------
 
-
+def double(x):
+    """ This is where you put additional notes about your
+    function. For example, this function takes an input,
+    `x`, and returns `x * 2`."""
+    return x * 2
 
 
 # -----------------------------------------------------

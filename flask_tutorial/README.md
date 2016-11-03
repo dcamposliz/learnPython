@@ -27,7 +27,7 @@ Say you just saved your Flask app as `hello.py`, and are trying to run it in you
     export FLASK_APP=hello.py
     flask run
 
-Learn more about options for running apps in the [official Python tutorial](http://flask.pocoo.org/docs/0.11/quickstart/).
+Learn more about options for running apps in the [official Flask tutorial](http://flask.pocoo.org/docs/0.11/quickstart/).
 
 # Running in Debug Mode
 

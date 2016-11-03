@@ -10,14 +10,14 @@ We will also need Python 2.x and `virtualenv`. Google how to to install Python 2
 
 Install `virtualenv`:
 
-  sudo pip install virtualenv
+    sudo pip install virtualenv
 
 Install `Flask` globally:
 
-  sudo pip install Flask
+    sudo pip install Flask
 
 Maybe do upgrade your pip setup tools:
 
-  pip2 install --upgrade pip setuptools
+    pip2 install --upgrade pip setuptools
 
 # Running Apps in Dev

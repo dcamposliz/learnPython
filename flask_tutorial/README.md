@@ -4,7 +4,9 @@ Flask is a micro-framework.
 
 ## Requirements
 
-Flask depends on external libraries like `Werkzeug` (toolkit for `WSGI`, the standard Python interface between web applications and a variety of servers for both development and deployment environments) and `Jinga2` (a toolkit for rendering templates).
+Flask depends on external libraries like `Werkzeug` (toolkit for `WSGI`, the standard Python interface between web applications and a variety of servers for both development and deployment environments) and `Jinga2` (a toolkit for rendering templates). We will also need **Python 2** and `virtualenv`.
+
+**So, what are these different libraries?**
 
 ## Wekzeug
 
@@ -12,7 +14,7 @@ Flask depends on external libraries like `Werkzeug` (toolkit for `WSGI`, the sta
 
 `Werkzeug` is a `WSGI` utility library for Python. It's widely used and licensed.
 
-Werkzeug is simple
+Werkzeug is simple.
 
     from werkzeug.wrappers import Request, response
 
@@ -66,7 +68,9 @@ It is internally based on Unicode and runs on a wide range of Python versions fr
 
 ## virtualenv
 
-We will also need Python 2.x and `virtualenv`. Google how to to install Python 2, if you haven't, already.
+#########################################
+##    ADD SOME BASIC NOTES ON `virtualenv`
+#########################################
 
 Install `virtualenv`:
 

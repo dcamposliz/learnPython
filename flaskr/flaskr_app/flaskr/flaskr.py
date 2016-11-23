@@ -1,3 +1,14 @@
+# -*- coding: utf-8 -*-
+
+"""
+	Flaskr
+	~~~~~~
+
+	A microblog example application written as
+	Flask tutorial with Flask and sqlite3.
+"""
+
+
 #-----------------------------------------------------#
 # APPLICATION SETUP CODE
 #-----------------------------------------------------#
@@ -15,6 +26,7 @@ app.config.from_object(__name__)
 # load default config and override config from an environment variable
 app.config.update(dict(
     DATABASE=os.path.join(app.root_path, 'flaskr.db'),
+    DEBUG=True,
     SECRET_KEY='development key',
     USERNAME='admin',
     PASSWORD='default'
@@ -67,7 +79,7 @@ def initdb_command():
 
 
 # show entries
-@app_route('/')
+@app.route('/')
 def show_entries():
     db = get_db()
     cur = db.execute('select title, text from entries forder by id desc')

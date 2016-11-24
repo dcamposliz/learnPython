@@ -1,3 +1,53 @@
+"""
+
+Overview of Object Oriented Programming Terminology
+
+	Class:
+
+		A user-defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members (class variables and instance variables) and methods, accessed via dot notation.
+
+	Class Variable:
+
+		A variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods. Class variables are not used as frequently as instances variables are.
+
+	Data Member:
+
+		A class variable or instance variable that holds data associated with a class and its objects.
+
+	Function Overloading:
+
+		The assignment of more that one behavior to a particular function. The operation performed varies by the types of objects or arguments involved.
+
+	Instance variable:
+
+		A variable that is defined inside a method and belongs only to the current instance of a class.
+
+	Inheritance:
+
+		The transfer of the characteristics of a class to other classes that are derived from it.
+
+	Instance:
+
+		An individual object of a certain class. An object `obj` that belongs to a class Circle, for example, is an instance of a class Circle.
+
+	Instantiation:
+
+		The creation of an instance of a class.
+
+	Method:
+
+		A special kind of function that is defined in a class definition.
+
+	Object:
+
+		A unique instance of a data structure that is defined by its class. An object comprises both data members (class variables and instance variables) and methods.
+
+	Operator Overloading:
+
+		The assignment of more than one function to a particular operator.
+	
+"""
+
 class Employee:
 	'Common base class for all employees'
 	empCount = 0
@@ -14,7 +64,7 @@ class Employee:
 		print ("Name : ", self.name, ", Salary: ", self.salary)
 
 
-# We can instanciate the methond `Employee` like this:
+# We can instanciate the class `Employee` like this:
 emp1 = Employee("Simon", 2000)
 emp2 = Employee("Manni", 5000)
 
@@ -105,4 +155,67 @@ b = 100
 c[0] = -1
 
 
+"""
 
+	Class Inheritance
+
+"""
+
+# declaring Parent class
+class Parent:
+	parentAttr = 100
+	def __init__(self):
+		print('Calling parent constructor')
+
+	def parentMethod(self):
+		print('Calling parent method')
+
+	def setAttr(self, attr):
+		Parent.parentAttr = attr
+
+	def getAttr(self):
+		print('Parent attribute : ', Parent.parentMethod)
+
+# declaring Child class
+class Child(Parent):
+	def __init__(self):
+		print('Calling child constructor')
+
+	def childMethod(self):
+		print('Calling child method')
+
+
+"""
+
+	Overriding Methods
+
+
+"""
+
+"""
+
+	Base Overloading Methods
+
+
+"""
+
+"""
+
+	Overloading Operators
+
+
+"""
+
+"""
+
+	Data Hiding
+
+
+"""
+
+"""
+
+	
+
+
+"""

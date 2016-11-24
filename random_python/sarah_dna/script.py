@@ -14,7 +14,7 @@ print "\n-------------[ Printint Output with Transformation ]-------------\n"
 
 # raw data
 dna_seq_1 = "Sarah Seagrave"
-dna_seq_2 = "Sarah Leslie Seagrave"
+dna_seq_2 = "Sarah Leslie Segrave"
 
 # data TRANSFORMATION
 dna_seq_lines_1 = dna_seq_1.splitlines()
@@ -37,7 +37,7 @@ print "\n-------------[ Printint Output without Transformation ]-------------\n"
 
 # raw data
 dna_seq_1 = "Sarah Seagrave"
-dna_seq_2 = "Sarah Leslie Seagrave"
+dna_seq_2 = "Sarah Leslie Segrave"
 
 # declaring our method
 the_method = difflib.Differ()
@@ -53,7 +53,7 @@ print '\n'
 ###
 
 function1 = ["Sarah Seagrave"]
-function2 = ["Sarah Leslie Seagrave"]
+function2 = ["Sarah Leslie Segrave"]
 differ = difflib.HtmlDiff()
 differ.make_table(function1, function2)
 

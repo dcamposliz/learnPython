@@ -19,3 +19,6 @@ stuff = sqrt(pow(5 - 4, 2) + pow(4 - 1, 2))
 print(stuff)
 
 print(1 / ( 1 + stuff))
+
+	# I dont understand this example because I dont know where the 5,4,4,1 come from. It is my impression that the 5 should be a 4.5 and so forth.
+

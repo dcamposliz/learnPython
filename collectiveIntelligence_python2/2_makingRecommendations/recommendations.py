@@ -1,5 +1,8 @@
-# A dictionary of movie critics and their ratings of a small set of movies
+############################################################
+## DATA
+############################################################
 
+# A dictionary of movie critics and their ratings of a small set of movies
 critics = {
   'Lisa Rose': {
     'Lady in the Water': 2.5,
@@ -54,6 +57,10 @@ critics = {
 
 from math import sqrt
 
+############################################################
+## EUCLEDIAN DISTANCE SCORE
+############################################################
+
 # returns a distance-based similarity score for person1 and person 2
 def sim_distance(prefs, person1, person2):
   # get the list of shared_items
@@ -77,6 +84,12 @@ def compareEveryone():
       print "\n" + critic_1 + " " + critic_2
       print sim_distance(critics, critic_1, critic_2)
 
+############################################################
+## PEARSON CORRELATION COEFFICIENT
+############################################################
+"""
+  The Pearson Correlation Score is a more sophisticated way to deter
+"""
 # returns the Pearson correlation coefficient for person1 and person2
 def sim_pearson(prefs, p1, p2):
   # get the liust of mutually rated items
@@ -89,8 +102,7 @@ def sim_pearson(prefs, p1, p2):
   n = len(si)
 
   # if they are not ratings in common, return 0
-  if n == 0:
-    return 0
+  if n == 0: return 0
 
   # add up all the preferences
   sum1 = sum([prefs[p1][it] for it in si])
@@ -101,3 +113,13 @@ def sim_pearson(prefs, p1, p2):
   sum2Sq = sum([pow(prefs[p2][it],2) for it in si])
 
   # sum up the products
+  pSum = sum ([prefs[p1][it]*prefs[p2][it] for it in si])
+
+  # calculate the Pearson score
+  num = pSum - (sum1 * sum2 / n)
+  den = sqrt((sum1Sq - pow(sum1,2)/n)*(sum2Sq-pow(sum2,2)/n))
+  if den == 0: return 0
+
+  r = num / den
+
+  return r

@@ -17,3 +17,21 @@ Requirements:
  - `quandl`
 
  - `pandas`
+
+To install, on execute on terminal:
+
+	virtualenv -p usr/bin/python3 venv
+
+	source venv/bin/activate
+
+	pip install quandl
+
+	pip install pandas
+
+	pip list
+
+	pip freeze --local > requirements.txt
+
+Regression finds the best-fit line for 'continous' data.
+
+View `regression.py` file for code.

@@ -28,17 +28,25 @@ It contains our `INSTALLED_APPS` application definition. It contains our `SECRET
 
 `webapp` is our first standalone micro-app directory. Django apps are a collection of micro-apps glued together and routed in the Django-way; it's awesome for simplifying development.
 
+**tests**
+
 `webapp/tests.py`
 
 `tests.py` is where we put our tests, for each micro-app. Tests are a way of sanitizing code, it tests functionality of code injections, including how it integrates to the rest of the base code. Testing will run each new feature at given parameters, saving time in terms of manual validation.
+
+**views**
 
 `webapp/views.py`
 
 `views.py` are what the user sees.
 
+**urls**
+
 `webapp/urls.py`
 
 `urls.py` are what glues the rest of the application together. 
+
+**models**
 
 `webapp/models.py`
 

@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'webapp', # this is our included app
+    'personal', # we also added this app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,3 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#------------------------------------------------------
+# Log of Code Injections
+#------------------------------------------------------
+# 
+# added `webapp` to INSTALLED_APPS
+# added `personal` to INSTALLED_APPS
+# deleted `webapp` because we are not even going to use it

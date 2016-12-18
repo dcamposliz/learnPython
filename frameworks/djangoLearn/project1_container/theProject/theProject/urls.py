@@ -19,9 +19,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^webapp/', include('webapp.urls')), # here we add a route for our app, this uses regex
+    url(r'^$', include('personal.urls')),
 ]
 
 # imported `include` at the top
-# included `webapp` at urlPatterns
-
+# included `webapp` at urlpatterns
+# deleteed `webapp` at urlpatterns

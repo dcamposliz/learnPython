@@ -1,8 +1,10 @@
-#`virtualenv`
+# virtualenv`
 
 `virtualenv` is a way of separating different python environments for different projects. This is useful for mitigating packages different versions and incompatibilities that might arise as a result.
 
+`virtualenv` is also useful in that it helps us ensure that we have the essential collection of python module coverage, in the specified versioning of such utilities.
 
+**Make sure to have `virtualenv` installed in the first place:**
 
 	pip install virtualenv
 

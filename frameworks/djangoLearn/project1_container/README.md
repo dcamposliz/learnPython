@@ -54,12 +54,29 @@ We also have `models.py`, which is our way of handing data and Django's way of h
 
 ---
 
-# Making an App
+# Deleting `webapp`
 
-Within `project1_container/theProject` we run:
+We deleted webapp from `project1_container/theProject` because that's not what our app will be about.
 
-	python manage.py startapp webapp
+For this, we remove the `webapp` `urlpattern` from `project1_container/theProject/theProject/urls.py`.
 
-Where `webapp` is a name of our choosing. This could have been called `blog`, `projects`, `store`, etc.
+We also remove the `webapp` directory from the `project1_container/t
+heProject/` directory.
+
+---
+
+# Making an App called `personal`
+
+We are going to build an app about ourselves, called `personal`.
+
+Within `project1_container/theProject` we ran:
+
+	python manage.py startapp personal
+
+Where `personal` is a name of our choosing. This could have been called `blog`, `projects`, `store`, etc.
 
 We want to put `webapp` within our `INSTALLED_APPS` array in our `project1_container/theProject/theProject/settings.py` file, as this incorporates our micro-app into our 'app hub'.
+
+## urls
+
+We make `urls.py` 

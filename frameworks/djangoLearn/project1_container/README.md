@@ -1,6 +1,6 @@
 # Django App with Python3 and virtualenv
 
-Source: [Introduction - Django Web Development with Python 1 by sentdex](https://youtu.be/FNQxxpM1yOs)
+## Source: [Introduction - Django Web Development with Python 1](https://youtu.be/FNQxxpM1yOs)
 
 ---
 
@@ -21,6 +21,8 @@ Make sure to be running `virtualenv`.
 It contains our `INSTALLED_APPS` application definition. It contains our `SECRET_KEY`, which should be kept secret, and gives us admin priviledges. If stolen, our sessions could be de-crypted, rendering our app vulnerable.
 
 `project1_container/theProject/theProject/urls.py` is kind of the main controller of the website. It contains our urlPatterns, which are built with regular expressions.
+
+## Source: [Introduction - Django Web Development with Python 2](https://www.youtube.com/watch?v=iZ5my3krEVM&t=5s)
 
 **webapp**
 
@@ -65,6 +67,8 @@ heProject/` directory.
 
 ---
 
+## Source: [Jinja Templating - Django Web Development with Python 3](https://www.youtube.com/watch?v=3tf8XlhsQAo&t=2s)
+
 # Making an App called `personal`
 
 We are going to build an app about ourselves, called `personal`.
@@ -90,3 +94,11 @@ We make `urls.py`. Of course, we do this within the `personal` directory; check 
 We create these files/directories within `personal` and proceed to write code. Check it :)
 
 ---
+
+## Source: [Bootstrap HTML CSS - Django Web Development with Python 4](https://www.youtube.com/watch?v=p8qpu9WscFU&t=74s)
+
+## `static`
+
+To add nice UI/UX, we create a `static` directory within `personal`. There, we dump the contents of **bootstrap**, specifically, the `css`, `js`, and `fonts` directories. We add a `README.md` for context.
+
+We want to load the bootstrap stuff in the `header.html`.

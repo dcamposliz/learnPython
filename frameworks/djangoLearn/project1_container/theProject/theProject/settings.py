@@ -126,4 +126,3 @@ STATIC_URL = '/static/'
 # 
 # added `webapp` to INSTALLED_APPS
 # added `personal` to INSTALLED_APPS
-# deleted `webapp` because we are not even going to use it

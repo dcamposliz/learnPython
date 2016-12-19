@@ -1,3 +1,5 @@
+## Source: [Python Tutorial: virtualenv and why you should use virtual environments](https://www.youtube.com/watch?v=N5vscPTWKOk&t=8s)
+
 #virtualenv`
 
 `virtualenv` is a way of separating different python environments for different projects. This is useful for mitigating packages different versions and incompatibilities that might arise as a result.
@@ -7,6 +9,8 @@
 **Make sure to have `virtualenv` installed in the first place:**
 
 	pip install virtualenv
+
+Make sure to have `python` and `virtualenv` within your `bin` directory.
 
 **List the Python modules available**
 

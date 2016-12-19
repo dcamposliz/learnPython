@@ -1,4 +1,4 @@
-# virtualenv`
+#virtualenv`
 
 `virtualenv` is a way of separating different python environments for different projects. This is useful for mitigating packages different versions and incompatibilities that might arise as a result.
 
@@ -8,7 +8,11 @@
 
 	pip install virtualenv
 
+**List the Python modules available**
+
 	pip list
+
+**Make a directory `PROJECT` where you want to execute `virtualenv` as `VENV`
 
 	mkdir PROJECT
 

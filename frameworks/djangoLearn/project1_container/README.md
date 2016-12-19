@@ -77,6 +77,16 @@ Where `personal` is a name of our choosing. This could have been called `blog`, 
 
 We want to put `webapp` within our `INSTALLED_APPS` array in our `project1_container/theProject/theProject/settings.py` file, as this incorporates our micro-app into our 'app hub'.
 
+--
+
 ## urls
 
-We make `urls.py` 
+We make `urls.py`. Of course, we do this within the `personal` directory; check its code, for reference. We also make sure to include in the main `urls.py` file.
+
+--- 
+
+## `templates` : [ `header.html` , `home.html` , `includes` : [ `snippet.html` ] ]
+
+We create these files/directories within `personal` and proceed to write code. Check it :)
+
+---

@@ -1,0 +1,7 @@
+<!-- django knows to look for the following files in the templates directory -->
+{% extends "personal/header.html" %}
+
+{% block content %}
+<p>Yay, I am writing some django shit!</p>
+{% include "personal/includes/snippet.html" %}
+{% endblock %}

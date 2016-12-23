@@ -111,6 +111,30 @@ With that, you get a free and rich, Python API to access your data. The API is c
 	# create a new Reporter.
 	>>>> r = Reporter(full_name = 'John Smith')
 
+	# save the object into the database. You have to call save() explicitly.
+	>>>> r.save()
+
+	# now it has an ID
+	>>>> r.id
+	1
+
+	# now the reporter is in the database.
+	>>>> Reporter.objects.all()
+	<QuerySet [<Reporter: John Smith>]>
+
+	# Fields are represented on the Python object.
+	>>>> r.full_name
+	'John Smith'
+
+	# django provides a rick database lookup API.
+	>>>> Reporter.objects.get(id=1)
+	<Reporter: John Smith>
+	>>>>
+	Reporter.objects.get(full_name_startswith='John')
+	<Reporter: John Smith>
+	>>>>
+	
+
 
 ## A dynamic admin interface: it's not just scaffolding - it's the whole house
 

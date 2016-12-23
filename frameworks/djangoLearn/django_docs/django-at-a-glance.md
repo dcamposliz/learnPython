@@ -28,7 +28,7 @@ A model is the single, definitive source of information about your data. It cont
 
 The basics:
 
- - Each model is a Python class that subclasses django.db.models.Model
+ - Each model is a Python class that subclasses `django.db.models.Model`
 
  - Each attribute of the model represents a database field.
 

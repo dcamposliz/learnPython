@@ -8,6 +8,8 @@ Django was designed to make web-development tasks fast and easy.
 
 ## Design your model
 
+#### `mysite/news/models.py`
+
 	from django.db import models
 	
 	# some more models code...
@@ -26,7 +28,7 @@ The [**data-model syntax**](https://docs.djangoproject.com/en/1.10/topics/db/mod
 
 A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you're storing. Generally, each model maps to a single database table.
 
-The basics:
+**The basics**:
 
  - Each model is a Python class that subclasses `django.db.models.Model`
 
@@ -35,7 +37,9 @@ The basics:
  - With all of this, Django gives you an automatically-generated database-access API; see Making queries.
 
 
-Quick example: this model defines a Person, which has a `first_name` and a ` last_name`:
+**Example 1**
+
+This model defines a Person, which has a `first_name` and a ` last_name`:
 
 	from django.db import models
 
@@ -46,7 +50,17 @@ Quick example: this model defines a Person, which has a `first_name` and a ` las
 `first_name` and `last_name` are fields of the model. Each field is specific as a class attribute, and each attribute maps to a database column.
 
 
+The above **Person** model would create a database table like this:
 
+	CREATE TABLE myapp_person (
+		"id" serial NOT NULL PRIMARY KEY,
+		"first_name" varchar(30) NOT NULL,
+		"last_name" varchar(30) NOT NULL
+	);
+
+
+
+**Example 2**
 
 It solves years' worth of database-schema problems. Here is a quick example:
 
@@ -77,7 +91,7 @@ It solves years' worth of database-schema problems. Here is a quick example:
 
 Run the Django command-line utility to create the database tables automatically:
 
-	python manage.py migrate
+	$ python manage.py migrate
 
 The migrate command looks at all your available models and creates tables in your database for whichever tables don't already exist, as well as optionally providing much richer schema control.
 
@@ -85,9 +99,18 @@ The migrate command looks at all your available models and creates tables in you
 
 ## Enjoy free API
 
-	from news.models import Reporter, Article
+With that, you get a free and rich, Python API to access your data. The API is created on the fly. No code generation necessary:
 
-	# some more API stuff...
+	# import the models we created from our "news" app
+	>>>> from news.models import Reporter, Article
+
+	# no reporters are in the system yet.
+	>>>> Reporter.objects.all()
+	<QuerySet []>
+
+	# create a new Reporter.
+	>>>> r = Reporter(full_name = 'John Smith')
+
 
 ## A dynamic admin interface: it's not just scaffolding - it's the whole house
 

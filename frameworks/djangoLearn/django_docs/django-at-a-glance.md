@@ -240,7 +240,7 @@ Let's say the `news/year_archive.html` template was found. Here is what it would
 
 Variables are surrounded by double-curly braces. **`{{ article.headline }}`** means "Output" the value of the article's headline attribute." But dots aren't used only for attribute lookup. They also can do dictionary-key lookup, index lookup and function calls.
 
-Note `** article.pub_date|date:"F j, Y" **` uses a Unix-style "pipe" (the "|" character). This is called a template filter, and it's a way to filter the value of a variable. In this case, the date filter formats a Python datetime object in the given format (as found in PHP's date function).
+Note **`article.pub_date|date:"F j, Y"`** uses a Unix-style "pipe" (the "|" character). This is called a template filter, and it's a way to filter the value of a variable. In this case, the date filter formats a Python datetime object in the given format (as found in PHP's date function).
 
 You can chain together as many filters as you'd like. You can also write custom template filters. You can write custom template tags, which run custom Python code behind the scenes.
 

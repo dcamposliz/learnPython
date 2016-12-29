@@ -189,6 +189,16 @@ For example, if a user requested a URL `/articles/2005/05/399323/`, Django would
 
 ## Write your views
 
+Each view is responsible for two things:
+
+ 1. Return HttpResponse object containing the content for the requested page
+
+ 2. Raise an exception such as Http404
+
+The rest is up to you.
+
+Generally, a view retrieves data according to the parameters, loads a template and renders the template with the retrieved data. Here is an example view for `year_archive` from above:
+
 **Location:** `mysite/news/views.py`
 
 	from django.shortcuts import render
@@ -200,9 +210,56 @@ For example, if a user requested a URL `/articles/2005/05/399323/`, Django would
 		context = {'year': year, 'article_list': a_list}
 		return render(request, 'news/year_archive.html', context)
 
+This example uses Django's template system, which has several powerful features but strives to stay simple enough for non-programmers to use.
+
 ---
 
 ## Design your templates
+
+The code above loads the `news/year_archive.html` template.
+
+Django has a template search path, which allows you to minimize redundancy among templates. In your Django settings, you specify a list of directories to check for templates with [DIRS](https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-TEMPLATES-DIRS). If a template doesn't exist in the first directory, it checks the second, and so on.
+
+Let's say the `news/year_archive.html` template was found. Here is what it would look like:
+
+**Location:** `mysite/news/templates/news/year_archive.html`
+
+	{% extends "base.html" %}
+
+	{% block title %}Articles for {{ year }}{% endblock %}
+
+	{% block content %}
+	<h1>Articles for {{ year }}</h1>
+
+	{% for article in article_list %}
+		<p>{{ article.headline }}</p>
+		<p>By {{ article.reporter.full_name }} </p>
+		<p>Published {{ article.pub_date|date:"F j, Y" }}</p>
+	{% endfor %}
+	{% endblock %}
+
+Variables are surrounded by double-curly braces. **`{{ article.headline }}`** means "Output" the value of the article's headline attribute." But dots aren't used only for attribute lookup. They also can do dictionary-key lookup, index lookup and function calls.
+
+Note `** article.pub_date|date:"F j, Y" **` uses a Unix-style "pipe" (the "|" character). This is called a template filter, and it's a way to filter the value of a variable. In this case, the date filter formats a Python datetime object in the given format (as found in PHP's date function).
+
+You can chain together as many filters as you'd like. You can also write custom template filters. You can write custom template tags, which run custom Python code behind the scenes.
+
+Finally, DJango uses the concept of "template inheritance". That's why the {% extends "base.html" %} does. It means "First load the template called 'base', which has defined a bunch of blocks, and fill the blocks with the following blocks." In short, that let's you dramatically cut down on redundancy in templates: each template has to define only what's unique to that template.
+
+Here is what the "base.html" template, including the use of static files, might look like:
+
+**Location:** `mysite/templates/base.html`
+
+	{% load static %}
+	<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+	</head>
+	<body>
+		<img src="{% static "images/sitelogo.png" %}" alt="Logo" />
+		{% block content %}{% endblock %}
+	</body>
+	</html>
 
 
 

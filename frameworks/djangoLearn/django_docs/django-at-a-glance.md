@@ -189,7 +189,16 @@ For example, if a user requested a URL `/articles/2005/05/399323/`, Django would
 
 ## Write your views
 
+**Location:** `mysite/news/views.py`
 
+	from django.shortcuts import render
+	
+	from .models import Article
+
+	def year_archive(request, year):
+		a_list = Article.objects.filter(pub_date__year=year)
+		context = {'year': year, 'article_list': a_list}
+		return render(request, 'news/year_archive.html', context)
 
 ---
 

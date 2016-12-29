@@ -1,22 +1,53 @@
 # Django at a glance
 
+Source: [Django Docs: Django at a glance](https://docs.djangoproject.com/en/1.10/intro/overview/)
+
 **Why Django**
 
 Django was designed to make web-development tasks fast and easy. 
 
-
+---
 
 ## Design your model
 
-#### `mysite/news/models.py`
-
-	from django.db import models
-	
-	# some more models code...
-
 Django comes with an [**object-relational mapper**](https://en.wikipedia.org/wiki/Object-relational_mapping). This means you describe your database layout in Python code.
 
-**Object-relational mapping**
+**Location:** `mysite/news/models.py`
+
+        from django.db import models
+
+        # returning Reporter
+
+        class Reporter(models.Model):
+        full_name = models.CharField(max_length=70)
+
+        def __str__(self):      # __unicode__ on Python 2
+                return self.full_name
+
+        # returning Article
+
+        class Article(models.Model):
+                pub_date = models.DateField()
+                headline = models.CharField(max_length=200)
+                content = models.TextField()
+                reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
+
+        def __str__(self):      # __unicode__ on Python 2
+                return self.headline
+
+### Install it
+
+Run the Django command-line utility to create the database tables automatically:
+
+        $ python manage.py migrate
+
+The migrate command looks at all your available models and creates tables in your database for whichever tables don't already exist, as well as optionally providing much richer schema control.
+
+---
+
+### Some additional notes
+
+#### Object-relational mapping
 
 Object-relational mapping in computer science is a programming techique for converting data between imcopatible type systems in object-oriented programming languages. This creates, in effect, a "virtual object database" that can be used from within the programming language. These are both free and commercial packages available that perform object-relational mapping, although some programmers opt to construct their own ORM tools.
 
@@ -24,7 +55,7 @@ In object-oriented programming, data-management tasks act on object-oriented (OO
 
 The [**data-model syntax**](https://docs.djangoproject.com/en/1.10/topics/db/models/) offers many rich ways of representing models .
 
-### Models
+#### Models
 
 A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you're storing. Generally, each model maps to a single database table.
 
@@ -37,7 +68,7 @@ A model is the single, definitive source of information about your data. It cont
  - With all of this, Django gives you an automatically-generated database-access API; see Making queries.
 
 
-**Example 1**
+**Example**
 
 This model defines a Person, which has a `first_name` and a ` last_name`:
 
@@ -49,7 +80,6 @@ This model defines a Person, which has a `first_name` and a ` last_name`:
 
 `first_name` and `last_name` are fields of the model. Each field is specific as a class attribute, and each attribute maps to a database column.
 
-
 The above **Person** model would create a database table like this:
 
 	CREATE TABLE myapp_person (
@@ -58,44 +88,7 @@ The above **Person** model would create a database table like this:
 		"last_name" varchar(30) NOT NULL
 	);
 
-
-
-**Example 2**
-
-It solves years' worth of database-schema problems. Here is a quick example:
-
-	from django.db import models
-
-	# returning Reporter
-
-	class Reporter(models.Model):
-	full_name = models.CharField(max_length=70)
-
-	def __str__(self):	# __unicode__ on Python 2
-		return self.full_name
-
-	# returning Article
-
-	class Article(models.Model):
-		pub_date = models.DateField()
-		headline = models.CharField(max_length=200)
-		content = models.TextField()
-		reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
-
-	def __str__(self):	# __unicode__ on Python 2
-		return self.headline	
-
 ---
-
-## Install it
-
-Run the Django command-line utility to create the database tables automatically:
-
-	$ python manage.py migrate
-
-The migrate command looks at all your available models and creates tables in your database for whichever tables don't already exist, as well as optionally providing much richer schema control.
-
---
 
 ## Enjoy free API
 
@@ -134,13 +127,15 @@ With that, you get a free and rich, Python API to access your data. The API is c
 	<Reporter: John Smith>
 	>>>>
 	
+	# --------- MISSING NOTES HERE ----------- #
 
+---
 
 ## A dynamic admin interface: it's not just scaffolding - it's the whole house
 
-### `models.py`
+Once your models are defined, Django can automatically create a professional, production ready **administrative interface** - a website that lets authenticated users add, change, and delete objects. 
 
-	mysite/news/models.py
+**Location:** `mysite/news/models.py`
 
 	from django.db import models
 	
@@ -150,9 +145,7 @@ With that, you get a free and rich, Python API to access your data. The API is c
 		content = models.TextField()
 		reporter = models.ForeigmKey(Reporter, on_delete=models.CASCADE)
 
-### `admin.py`
-
-	mysite/news/admin.py
+**Location:** `mysite/news/admin.py`
 
 	from django.contrib import admin
 
@@ -160,12 +153,58 @@ With that, you get a free and rich, Python API to access your data. The API is c
 
 	admin.site.register(models.Article)
 
+The idea is that the site is edited by staff, or a client - without having to deal with creating a backend kjust to edit content. We focus, instead, on developing the way data is presented to the public.
+
+---
+
 ## Design your URLs
+
+A clean, elegant URL scheme is an important detail in a high-quality web application. Django encourages beautiful URL design.
+	
+To design URLs for your app, you create a Python module called a `URLconf`. A table of contents for your app, it contains a simple mapping between URL patterns and Python callback functions. URLconfs also server to decouple URLs from Python code.
+
+Here is more documentation on [URLs](https://docs.djangoproject.com/en/1.10/topics/http/urls/).
+
+Here is what a URLconf might look like for the **Reporter/Article** example:
+
+**Location:** `mysite/news/urls.py`
+
+	from django.conf.urls import url
+
+	from . import views
+
+	urlpatterns = [
+		url(r'^articles/([0-9]{4})/$', views.year_archive),
+		url(r'^articles/([0-9]{4})/([0-9]{2})/$', views.month_archive),
+		url(r'^articles/([0-9]{4})/([0-9]{2})/([0-9]+)/$', views.article_detail),
+	]
+
+The code above maps URLs, as simple regular expressions, to the location of Python callback functions ("views"). The regular expressions use parenthesis to "capture" values from the URLs. When a user requests a page, Django runs through each pattern, in order, and stops at the first one that matches the requested URL. If no URL matches, Django calls a special-case 404 view. This is blazingly fast, because the regular expressions are compiledat load time.
+
+Once one of the regexes matches, Django imports and calls the given view, which is a simple Python function. Each view gets passed a request object - which contains request metadata - and the values captured in the regex.
+
+For example, if a user requested a URL `/articles/2005/05/399323/`, Django would call the function **news.views.article_detail(request, '2005', '05', '39323')**.
+
+---
 
 ## Write your views
 
+
+
+---
+
 ## Design your templates
+
+
+
+---
 
 ## This is just the surface
 
-There is a
+There are additional features to Django's functionality:
+
+ - A caching framework that integrates with memchached or other backends.
+
+ - A syndication framework that makes creating RSS and Atom feeds as easy as writing a small Python class.
+
+ - More sexy automatically generated admin features = this overview barely scratched the surface.

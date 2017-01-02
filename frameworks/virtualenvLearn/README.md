@@ -24,9 +24,9 @@ Make sure to have `python` and `virtualenv` within your `bin` directory.
 
 	virtualenv VENV
 
-	virtualenv -p usr/bin/python2 VENV
+	virtualenv -p /usr/bin/python2 VENV
 
-	virtualenv -p usr/bin/python3 VENV
+	virtualenv -p /usr/bin/python3 VENV
 
 	source VENV/bin/activate 
 	
